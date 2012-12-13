@@ -260,36 +260,36 @@ Hedefler
 Manyetik kasete üzerinde bir dizin ağacı depolar. tape—the magnetic tape drive appears
 within Linux as a device file onto which the output of the archival program can be written.
 Diğer taraftan, arşivlenen verileri kasetin sürücü cihaz dosyalarından okuyup arşivden
-Çıkartarak dizi ağaçlarını yeniden yapılandırabilir. İlgili programların çoğu, arşivleri
+Çıkartarak dizi ağaçlarını yeniden yapılandırılması münkün. İlgili programların çoğu, arşivleri
 Çözüp oluşturabildiğinden beri her iki işlemi de arşivleme başlığı altında inceliyoruz.
 burada bizi ilgilendiren kısmı sadece kayıpsız sıkıştırmadır, sıkıştırılmış verilerimizi
-yeniden inşa ederek orijinal formuna sokabilmemizi sağlar.
-Başka bir deyişle, yüksek dereceli bir sıkıştırmada gereksinimleri terk ederek orijinal haline getirmeyi başarabilmesi bir alternatiftir. Buna "Lossy"(kayipli) sıkıştırma yöntemi denir  ve aynen JPEG resimleri ve "MPEG-1" ses katmanlarındaki gibi sıkıştırılırlar. Işin ilginç yanı olan gereksiz verilerden kurtulmanın yolu; Örnek bir mp3 verisini alalım, Bu parcalarin bir kisim sinyallerini atalim, “psycho-acoustic model” e dayanarak sadece insanların duyabileceği derecede ve bunu dinleyenlerin anlayamayacağı kadar kayıp vererek kodlamak mümkündür. JPEG bir birlerine benzeyen Çizgilerle Çalışır. Çalışma süresinin kodlanması aşağıdaki karakter dizinin temsil eden basit bir ornek alirsak;
+yeniden inşa ederek orijinal formuna getirebilmemizi sağlar.
+Başka bir deyişle, yüksek dereceli bir sıkıştırmada gereksinimleri terk ederek orijinal haline getirmeyi başarabilmesi bir alternatiftir. Buna "Lossy"(kayipli) sıkıştırma yöntemi denir  ve aynen JPEG resimleri ve "MPEG-1" ses katmanlarındaki gibi sıkıştırılması münkün. Işin ilginç yanı, olan gereksiz verilerden kurtulmanın yolu; Örnek bir mp3 verisini alalım, Bu parcalarin bir kısım sinyallerini atalim, “psycho-acoustic model” e dayanarak sadece insanların duyabileceği derecede ve bunu dinleyenlerin anlayamayacağı kadar kayıp vererek kodlamak mümkündür. JPEG bir birlerine benzeyen Çizgilerle Çalışır. Çalışma süresinin kodlanması aşağıdaki karakter dizinin temsil eden basit bir ornek alirsak;
 ABBBBAACCCCCAAAABAAAAAC
 daha yoğun şekilde
 A*4BAA*5C*4AB*5AC
 Burda, “*4B ” sıralı dört tane “B” karakter. Bu basit yaklaşım “run-length encoding”(uzun kodlama çalıştırma) olarak adlandırılır ve bugün bile örneğin faks makinelerinde(düzeltmeleriyle birlikte) bulunur. “Real” (gerçek) gzip veya bzip2 givi sıkıştırma yazılımları gelişmiş yeni metotlar kullanırlar.
 
-Bu tur birleşmiş arşivleme ve sıkıştırma yazılımlar Windows dünyasında yenii ölçüde kullanırlar. (PKZIP, WinZIP vs),ayni adim genellikle Linux ve Unix dünyasında ayrı olarak ele alınır. Arşivi ilk kez kullanırken tar çıkış sıkıştırma işleminden önce tar ile dosyaların bir dizi olduğunu söylemek popüler bir yöntemdir, gzip-PKZIP ve benzerleri kendi üzerindeki her bir dosyayı sıkıştırır ve sonra bir tek büyük bir dosya içine sıkıştırılmış dosyaları toplar.
+Bu tur birleşmiş arşivleme ve sıkıştırma yazılımlar Windows dünyasında sık ölçüde kullanırlar. (PKZIP, WinZIP vs),ayni adim genellikle Linux ve Unix dünyasında ayrı olarak ele alınır. Arşivi ilk kez kullanırken tar sıkıştırma işleminden önce tar ile dosyaların bir dizi olduğunu söylemek popüler bir yöntemdir, gzip-PKZIP ve benzerleri kendi üzerindeki her bir dosyayı sıkıştırır ve sonra bir tek büyük bir dosya içine sıkıştırılmış dosyaları toplar.
 
-Bu yöntemin PKZIP ve bağlantılı yöntemlere göre avantajı bu yöntemin yüksek sıkıştırma oranı veren birkaç orijinal dosya arasında yer alabilmesidir. Ancak bu da şu durumda bir dezavantaj sayılabilir; eğer dosya hasar görmüşse tüm arşiv bu noktadan başlayarak işe yaramaz hale gelebilir.
+Bu yöntemin PKZIP ve bağlantılı yöntemlere göre avantajı bu yöntemin yüksek sıkıştırma oranı veren birkaç orijinal dosya arasında yer alabilmesidir. Ancak bu da şu durumda bir dezavantaj sayılabilir; eğer dosya hasar görmüşse tüm arşiv hasar gören noktadan başlayarak işe yaramaz hale gelebilir.
 
-Doğal olarak Linux’ta bile kimse sizi ilk sıkıştırmanızdan ve onları arşivlemenizden alıkoymaz. Maalesef bu yöntem diğerindeki kadar kullanışlı değildir
+Doğal olarak Linux’ta bile kimse sizi ilk sıkıştırmanızdan ve onları arşivlemenizden alıkoymaz. Maalesef bu yöntem diğerinde olduğu kadar kullanışlı değildir
 
-Elbette Linux’ta de Windows dünyasındaki rar ve zip gibi kullanışlı sıkıştırma programları vardır.
+Elbette Linux’ta da Windows dünyasındaki rar ve zip gibi kullanışlı sıkıştırma programları vardır.
 Uygulama
 C 11.1 [1] Neden run-length kodlama örneğinde AA yerine *2A i kullanılır?
 C 11.2 [2] run-length kodlama metodun kullanarak "A*2B****A" dizinini
 Nasıl gösterebilirsiniz?
 
 11.2 tar Kullanarak Dosya Arşivleme
-tar ismi “kaset arşivin ’den türemiştir. Uygulama bireysel dosyaları arşiv dosya sına koyar ve birinden diğerine ek bilgileri not alır (tarih, erişme izni, sahibi, …). Her ne kadar tar’ın başlangıçta manyetik teyp sürücüleri ile birlikte kullanılabilir olması gerekse de , tar arşivleri çeşitli medyalar üzerine doğrudan yazılmış da olabilir. Diğer kullanımlar arasında tar dosyaları Linux ve diğer özgür yazılım paketleri için kaynak kodu yaymak için standart biçimidir.
+tar ismi “kaset arşivin ’den türemiştir. Uygulama bireysel dosyaları arşiv dosya sına koyar ve birinden diğerine ek bilgileri not alır (tarih, erişme izni, sahibi, …). Her ne kadar tar ın başlangıçta manyetik teyp sürücüleri ile birlikte kullanılabilir olması gerekse de , tar arşivleri çeşitli medyalar üzerine doğrudan yazılmış da olabilir. Diğer kullanımlar arasında tar dosyaları Linux ve diğer özgür yazılım paketleri için kaynak kodu yaymak için standart biçimidir.
 
-Linux üzerinde yaygın olarak kullanılan katran GNU uygulaması diğer Unix türevleri olan tar uygulamalarında bulunan çeşitli uzantıları içerir. Örneğin, GNU tar birçok medyayı kapsayan çok hacimli arşiv oluşturarak bunu destekler. Bu, çoklu cilt arşivler bile küçük arşivler yalnızca çok kirli Tabii ki, diskete yedek kopyalarını sağlar. Elbette ki sadece küçük arşivler için önemli olan bu çoklu cilt arşivleri bile diskete yedekleme yapılmasına izin verir.
+Linux üzerinde yaygın olarak kullanılan katran GNU uygulaması diğer Unix türevleri olan tar uygulamalarında bulunan çeşitli uzantıları içerir. Örneğin, GNU tar birçok medyayı kapsayan çok hacimli arşiv oluşturarak bunu destekler. Bu, çoklu cilt arşivler bile küçük arşivler yalnızca çok kirli Tabi ki, diskete yedek kopyalarını sağlar. Elbette ki sadece küçük arşivler için önemli olan bu çoklu cilt arşivleri bile diskete yedekleme yapılmasına izin verir.
 
-Küçük bir açıklama: Bölme(split) komutu arşiv dosyaları gibi büyük dosyaları kesebilmeyi sağlar ve böylece dosya uygun parçalar haline getirilerek disketlere kopyalanabilir ya da e-maille yollanabilir ve cat(kedi) kullanılarak geldikleri şeklinde yeniden birleştirilebilirler.
+Küçük bir açıklama: Bölme(split) komutu arşiv dosyaları gibi büyük dosyaları kesmesini sağlar ve böylece dosyayı uygun parçalar haline getirilerek disketlere kopyalanabilir ya da e-maille yollanabilir ve cat kullanılarak geldikleri şeklinde yeniden birleştirilebilirler.
 
-tar’n avantajları: Bunun kullanımı basittir, güvenli ve iyi çalışır, evrensel olarak tüm Unix ve Linux sistemlerinde çalışır. Bunun dezavantajları basit arizalardan dolayı problemlere yol açabilir, ve  tar’ in tüm sürümleri aygıt dosyalarını depolayamayabilir. (Sisteminizin tümüne geri yüklemek istediğinizde).
+tar' ın avantajları: Bunun kullanımı basittir, güvenli ve iyi çalışır, evrensel olarak tüm Unix ve Linux sistemlerinde çalışır. Bunun dezavantajları basit arizalardan dolayı problemlere yol açabilir, ve  tar' in tüm sürümleri aygıt dosyalarını depolayamayabilir. (Sisteminizin tümüne geri yüklemek istediğinizde).
 
 tar arşivleri, dosyalar ve tüm dizin hiyerarşileri içerir. Eğer Windows medyası ağ
 Üzerinden dizin ağaçları içinde takılı ise, içerikleri tar kullanarak arşivlenir. tar
@@ -314,7 +314,7 @@ Hepsi oluşmamışsa, Bunlar daha önceden eklenmiştir (manyetik kaseteler içi
 -v Verbose modulu—tam o sırada tar' ın ne yapıyor olduğunu görüntüler
 -x Dosyalar ve Dizinleri arşivden çıkarır
 -z gzip kullanarak arşivi sıkıştırır veya sıkıştırmadan çıkarmasını
--Z sıkıştırma kullanarak arşivi sıkıştırır veya açmasını (Normalde linux üzerinde
+-Z sıkıştırma kullanarak arşivi sıkıştırır veya sıkıştırmadan çıkarmasını (Normalde linux üzerinde
 mevcut değil)
 -j bzip2 kullanarak arşivi sıkıştırır veya sıkıştırmadan çıkarmamasının
 option syntax tar in söz dizim seçenekleri oldukça sıra dışıdır,
