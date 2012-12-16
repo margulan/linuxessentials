@@ -355,38 +355,38 @@ Uygulamalar
 11.3 [!2] Ana dizinizdeki dosyaların liste bilgilerin bir dosya içinde depolayın.
 O dosyanın tar arşivini oluşturun. Orijinal dosya ve onun arşivini bir
 Biriyle karşılaştır. Ne önerilirsiniz?
-11.4 [2] üç veya dört bos dosya oluşturup onu yeni oluşturduğunuz arşive ekleyiniz
-11.5 [2] asil dosyanızı silin ve tar in içeriklerini arşivden çıkaran.
-11.6 eğer bir dosya veya muhafaza edilmesi için dizinin adı mutlak bir yol adı olarak verilirse neden GNU tar profilaktik olarak yol adı başlangıcında silmez?
+11.4 [2] üç veya dört boş dosya oluşturup onu yeni oluşturduğunuz arşive ekleyiniz
+11.5 [2] asıl dosyanızı silin ve tar ın içeriklerini arşivden çıkarın.
+11.6 Eğer bir dosya veya muhafaza edilmesi için dizinin adı mutlak bir yol adı olarak verilirse neden GNU tar profilaktik olarak yol adı başlangıcında silmez?
 ve etc-backup.tar (a) mutlak yol isimleri varsa ne olacağını hayal edin,(b) başka bir
 bilgisayara aktarılır ve orada çözülür).
 11.3 gzip ile Dosya Sıkıştırma
 Linux in en yaygın kullanılan sıkıştırma uygulaması Jean-Loup Gailly ve Mark Adler
-Tarafından geliştirilmiştir. Bu tek bir dosya sıkıştırması için kullan ilmiştir. (yakınlarda adi
+Tarafından geliştirilmiştir. Bu tek bir dosya sıkıştırması için kullanilmiştir. (yakınlarda adi
 Geçmiştir, çokça dosyaları tek arşivde içermesi mümkündür).
 gzip uygulaması ("GNU zip" in kısaltılmışı) 1992 de sıkıştırma problemleri önlemek
 İçin ortaya cikmistir, standart Unix sürümlerin özel sıkıştırma aracısıdır. Sıkıştırma
-Lempel-Ziv-Wlch algoritmasına dayanmistirl (LZW), patent hakları US tarafından
-Sakilidir 4,558,302. Bu patenti Sperry (later Unisys) şirketine ait olup buda 20
-Haziran 2003 de suresi sona ermişti. Diğer taraftan, gzip DEFLATE metodu Phil
-Katz[RFC 1951] tarafindan  kullanılmıstır,Artik LZW patentine sahip olmamasına
-Dayalı bunun yani sira LZ77 isimin alan Huffmen scema kodlaması ozgur patent
-Olmuştur. ayrıca, LZW den daha iyi çalışmaktadır.
-gzip compress i kullanarak sıkıştırılmış dosyaları sıkıştırmadan çıkarır, çünkü
-Sadece Unisys tarafından patenti korunmuştur. Bu tur dosyaları ".Z" komutu
+Lempel-Ziv-Wlch algoritmasına dayanmıstır (LZW), patent hakları US tarafından
+Saklıdır 4,558,302. Bu patenti Sperry (later Unisys) şirketine ait olup buda 20
+Haziran 2003 de süresinde sona ermişti. Diğer taraftan, gzip DEFLATE metodu Phil
+Katz[RFC 1951] tarafından  kullanılmıştır, Artik LZW patentine sahip olmamasına
+Dayalı bunun yanı sıra LZ77 isimin alan Huffmen schema kodlaması özgür patent
+olmuştur. Ayrıca, LZW den daha iyi çalışmaktadır.
+gzip compress kullanarak sıkıştırılmış dosyaları sıkıştırmadan çıkarır, çünkü
+Sadece Unisys tarafından patenti korunmuştur. Bu tür dosyaları ".Z" komutu
 İsimleri ile ayırt edebilirsiniz.
 gzip i PKZIP ve benzer Windows uygulamaları "ZIP" ismiyle karıştırılmamalıdır
-Bu tur uygulamalar derhal dosyaları sıkıştırıp ardından arşivleyebilir; gzip sadece
-Sıkıştırma isiyle uğraşır ve arşivleme isini tar veya cpio uygulamalarına birikir. .—gzip, ZIP
+Bu tür uygulamalar derhal dosyaları sıkıştırıp ardından arşivleyebilir; gzip sadece
+Sıkıştırma işiyle uğraşır ve arşivleme işini tar veya cpio uygulamalarına birikir. .—gzip, ZIP
 Paketleri tam olarak hangi bir dosya DEFLATE yöntemle arşivlenmiş bunları
 Arşivden çıkarabilir.
-gzip bir tek dosyaları isler ve değiştirir, Dosyaların uzantı isimlerine. gz ismini ekler.
+gzip bir tek dosyaları işler ve değiştirir, Dosyaların uzantı isimlerine. gz ismini ekler.
 Bu degisikler dosyanın orijinal halinden daha az hafıza tutar. Birkaç dosyalar bir tek arşiv
 içine sıkıştırılmalıdır, tar ve gzip bileşik olmalıdır.
 gzip in en önemli tercihleri şunlardır:
--c sıkıştırılmış dosyasını standart sıktıysa gönderir, asil dosyanın yerine konur;
-asilin kalanı değişmemektir.
--d sıkıştırılmış dosyanı çıkarmak (obur turlu: gunzip gzip -d gibi calisir)
+-c sıkıştırılmış dosyasını standart çıktısına gönderir, asil dosyanın yerine konur;
+asılın kalanı değişmemektir.
+-d sıkıştırılmış dosyanı çıkarmak (öbür türlü: gunzip gzip -d gibi çalışır)
 -l ("list") sıkıştırılmış dosyanın adi, paket boyutu givi önemli bilgilerini görüntüler
 -r (“recursive”) alt dizindeki dosyaları sıkıştırır
 -S ⟨suffix⟩ uses the specified suffix in place of .gz
